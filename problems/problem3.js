@@ -6,12 +6,12 @@ function carModelsListAlphabetically(data){
         if(!Array.isArray(data) || data.length ===0){
             throw new Error("No car found in the data")
         }
-        let alphabetical_car_list=[];
-        for(let cars of data){
-            alphabetical_car_list.push(cars.car_model)
-        }
-        alphabetical_car_list.sort();
-        return(alphabetical_car_list)
+        
+        let cars_models= data.map((model) =>{
+            return model.car_model;
+        });
+        
+        return cars_models.sort()
 
 
     } catch (error) {
