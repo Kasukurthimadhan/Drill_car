@@ -12,11 +12,8 @@ function carWithAnIdOf_33(data, idToFind) {
             throw new Error("Invalid ID. Expected a number.");
         }
 
-        for (let car of data) {
-            if (car.id === idToFind) {
-                console.log(`Car ${idToFind} is a ${car.car_year} ${car.car_make} ${car.car_model}`);
-            }
-        }
+        let cars=data.find((car) => car.id==idToFind)
+        console.log(`Car 33 is a ${cars.car_year} ${cars.car_make} ${cars.car_model}`);
     } catch (error) {
         console.error("An error occurred while processing the data:", error);
     }
