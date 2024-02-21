@@ -6,14 +6,9 @@ function containBmeAndAudiCars(data){
         if(!Array.isArray(data) || data.length === 0){
             throw new Error("No cars found in the data")
         }
-        let cars_list_bmw_audi=[];
-        for(let car of data){
-            if(car.car_make=="BMW" || car.car_make=="Audi"){
-                cars_list_bmw_audi.push(car)
-            }
-        }
+        let cars=data.filter((car) => car.car_make=="BMW" || car.car_make=="Audi")
 
-        return (JSON.stringify(cars_list_bmw_audi, null, 2));
+        return (JSON.stringify(cars,null,2))
     } catch (error) {
         console.error("An error occurred while processing the data:",error)
     }
