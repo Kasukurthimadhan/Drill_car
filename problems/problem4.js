@@ -6,11 +6,12 @@ function allCarYears(data){
         if(!Array.isArray(data) || data.length ===0){
             throw new Error("No car years found in the data")
         }
-        let car_years=[];
-        for(let cars of data){
-            car_years.push(cars.car_year)
-        }
-        return car_years
+        
+        let car_year=data.map((data) => data.car_year)
+
+        return car_year
+
+
     } catch (error) {
         console.error("An error occurred while prcessing the data:",error)
     }
